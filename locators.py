@@ -12,6 +12,3 @@ class MainPageLocators(object):
     CONFIRMPASSWORD = "confirmpassword"
     Error = "alert"
 
-class SearchResultsPageLocators(object):
-    """A class for search results locators. All search results locators should come here"""
-    pass

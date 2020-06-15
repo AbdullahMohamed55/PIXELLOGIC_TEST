@@ -52,4 +52,4 @@ The report as same as the Testcase file added to that the **actual output** and 
   <img src="https://i.imgur.com/o6Stc4j.png">
 </div>
 
-3) Regarding the **HTTP interceptor** I couldn't find a way to do it in python in selenium I was at a point I couldn't use another frame work because I had done a lot already.
+3) Regarding the **HTTP interceptor** It's not supported in selenium python I was at a point I couldn't use another frame work because I had done a lot already.

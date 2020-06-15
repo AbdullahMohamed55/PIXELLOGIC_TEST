@@ -7,7 +7,7 @@ you need to install selenium
 ```
 $ pip install selenium
 ```
-then run hte automation script
+then run the automation script
 
 ```
 $ python main.py
@@ -30,6 +30,19 @@ Separating the locator strings from the place where they are being used. In this
   <img src="https://i.imgur.com/BQ1gW0J.png">
 </div>
 
+## Testcases 
+All the test cases are in file **testcase.csv**
+where each row is like this :
+<div align="center">
+  <img src="https://i.imgur.com/f3fEolz.png">
+</div>
+the smaple input and the expected output that we compare against.
+
+## Report
+The report as same as the Testcase file added to that the **actual output** and **reason** colomn.
+<div align="center">
+  <img src="https://i.imgur.com/YaUOHFI.png">
+</div>
 
 
 ## Notes

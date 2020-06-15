@@ -12,8 +12,8 @@ then run the automation script
 ```
 $ python main.py
 ```
-## Hierarcchy 
-The could is Fully **OOP** and the hierarchy is as below :
+## Hierarchy 
+The code is **OOP** and the Hierarchy is as below :
 1) ``` main.py``` 
 I used **Unit testing** to test the signup forum also after each successful sign up the webdriver will log into the account to make sure it logs in correctly. 
 Also Restarting the browser when error occur or crashes due to failures and other exceptions.

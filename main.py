@@ -5,31 +5,36 @@ import time
 import csv
 import random
 import string 
+import sys
+import os
+
+
 class PHP_Travel_SignUp(unittest.TestCase):
     """A sample test class to show how page object works"""
-
+    # PATH of the webdriver
+    PATH = '/home/abdo/Documents/pixellogic/chromedriver'
     def setUp(self):
-        PATH = '/home/abdo/Documents/pixellogic/chromedriver'
-        self.driver = webdriver.Chrome(PATH)
+        
+            
+            # PATH = '/home/abdo/Documents/pixellogic/chromedriver'
+        self.driver = webdriver.Chrome(self.PATH)
         self.driver.get("https://www.phptravels.net/register")
         # load test cases from csv
         ############# TO DO #################
 
 
     def restart(self):
-
+        
         # this restart the browser everytime it crashes 
         self.driver.close()
-        PATH = '/home/abdo/Documents/pixellogic/chromedriver'
-        self.driver = webdriver.Chrome(PATH)
+       
+        self.driver = webdriver.Chrome(self.PATH)
         self.driver.get("https://www.phptravels.net/register")
 
 
     def login(self,usr,pswd):
-
         self.driver.close()
-        PATH = '/home/abdo/Documents/pixellogic/chromedriver'
-        self.driver = webdriver.Chrome(PATH)
+        self.driver = webdriver.Chrome(self.PATH)
         self.driver.get('https://www.phptravels.net/login')
         user = self.driver.find_element_by_name('username')
         user.send_keys(usr)
@@ -102,7 +107,8 @@ class PHP_Travel_SignUp(unittest.TestCase):
                         row.append(result)
                         report.append(row)
                     self.restart()
-            except:
+            except Exception as e:
+                print(e)                
                 self.restart()
 
                 # print(result,"  ",row[-2])
@@ -116,4 +122,5 @@ class PHP_Travel_SignUp(unittest.TestCase):
         self.driver.close()
 
 if __name__ == "__main__":
+
     unittest.main()

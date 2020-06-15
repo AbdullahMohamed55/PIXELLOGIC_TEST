@@ -58,6 +58,7 @@ class MainPage(BasePage):
         """Triggers the sign up"""
        
         element = self.driver.find_element(*MainPageLocators.SIGNUP_BUTTON)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
         element.click()
     def checkErrorType(self):
         try:

@@ -1,5 +1,5 @@
-FirstName,LastName,Phone,m32qvuzzbmz5t@hotmail.gov,Password,ConfirmPassword,Expected,ouptut,reason
-Abdo,Mohamed,1110615720,,Ab123456,Ab123456,NotSignUp,Passed,Fill out the missing cell
+FirstName,LastName,Phone,email,Password,ConfirmPassword,Expected,ouptut,reason
+Abdo,Mohamed,1110615720,m32qvuzzbmz5t@hotmail.gov,Ab123456,Ab123456,NotSignUp,Passed,Fill out the missing cell
 Abdo,Mohamed,1110615720,ikr9i3dyo6@comcast.gov,Ab123456,Ab123456,SignUp,Passed,SignedUp
 abdo,Mohamed,1110615721,7u@gmail.com,Ab123457,Ab123457,NotSignUp,Failed,SignedUp
 Abdo1,Mohamed,1110615722,mx0o@verizon.gov,Ab123458,Ab123458,NotSignUp,Failed,SignedUp

@@ -15,7 +15,7 @@ $ python main.py
 ## Hierarchy 
 The code is **OOP** and the Hierarchy is as below :
 1) ``` main.py``` 
-I used **Unit testing** to test the signup forum also after each successful sign up the webdriver will log into the account to make sure it logs in correctly. 
+I used **Python's testing framework** to test the signup forum also after each successful sign up the webdriver will log into the account to make sure it logs in correctly. 
 Also Restarting the browser when error occur or crashes due to failures and other exceptions.
 
 2) ``` page.py ```

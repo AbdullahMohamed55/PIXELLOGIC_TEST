@@ -34,22 +34,21 @@ Separating the locator strings from the place where they are being used. In this
 All the test cases are in file **testcase.csv**
 where each row is like this :
 <div align="center">
-  <img src="https://i.imgur.com/f3fEolz.png">
+  <img src="https://i.imgur.com/SBH9Io6.png">
 </div>
 the smaple input and the expected output that we compare against.
 
 ## Report
 The report as same as the Testcase file added to that the **actual output** and **reason** colomn.
 <div align="center">
-  <img src="https://i.imgur.com/YaUOHFI.png">
+  <img src="https://i.imgur.com/xvzUTzh.png">
 </div>
-
+Each test case that failed **the Web Driver** took a screen shot of browser window and save it to Failedscreenhots folder with its name the number of the test case
 
 ## Notes
-1) Each test case that failed **the Web Driver** took a screen shot of browser window and save it in the folder with its name the number of the test case
-2) Change the path of the webdriver to the corresponding one on your system in ``` main.py ``` 
+1) Change the path of the webdriver to the corresponding one on your system in ``` main.py ``` 
 <div align="center">
   <img src="https://i.imgur.com/o6Stc4j.png">
 </div>
 
-3) Regarding the **HTTP interceptor** It's not supported in selenium python I was at a point I couldn't use another frame work because I had done a lot already.
+2) Regarding the **HTTP interceptor** It's not supported in selenium python I was at a point I couldn't use another frame work because I had done a lot already.

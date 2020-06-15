@@ -16,6 +16,6 @@ $ python main.py
 1) Each test case that failed I took a screen shot of browser window and save it in the folder with its name the number of the test case
 2) Change the path of the webdriver to the corresponding one on your system in ``` main.py ``` 
 <div align="center">
-  <img src="i.imgur.com/o6Stc4j.png">
+  <img src="https://i.imgur.com/o6Stc4j.png">
 </div>
 

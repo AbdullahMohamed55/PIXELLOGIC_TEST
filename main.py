@@ -5,7 +5,7 @@ import time
 import csv
 import random
 import string 
-class PythonOrgSearch(unittest.TestCase):
+class PHP_Travel_SignUp(unittest.TestCase):
     """A sample test class to show how page object works"""
 
     def setUp(self):
@@ -17,6 +17,8 @@ class PythonOrgSearch(unittest.TestCase):
 
 
     def restart(self):
+
+        # this restart the browser everytime it crashes 
         self.driver.close()
         PATH = '/home/abdo/Documents/pixellogic/chromedriver'
         self.driver = webdriver.Chrome(PATH)
@@ -24,6 +26,7 @@ class PythonOrgSearch(unittest.TestCase):
 
 
     def login(self,usr,pswd):
+
         self.driver.close()
         PATH = '/home/abdo/Documents/pixellogic/chromedriver'
         self.driver = webdriver.Chrome(PATH)
@@ -40,6 +43,8 @@ class PythonOrgSearch(unittest.TestCase):
         else: 
             return True
     def generateRandomEmail(self):
+        # Generating random emails to test with 
+
         extensions = ['com','net','org','gov']
         domains = ['gmail','yahoo','comcast','verizon','charter','hotmail','outlook','frontier']
 
@@ -55,64 +60,58 @@ class PythonOrgSearch(unittest.TestCase):
 
     def test_search_in_python_org(self):
         """
-        Tests python.org search feature. Searches for the word "pycon" then verified that some results show up.
-        Note that it does not look for any particular text in search results page. This test verifies that
-        the results were not empty.
+        Testing the sign up forum 
+
         """
 
         #Load the main page. In this case the home page of Python.org.
         report = []
         with open('testcase.csv') as csv_file:
             self.csv_reader = csv.reader(csv_file, delimiter=',')
-            for i,row in enumerate(self.csv_reader):
-                main_page = page.MainPage(self.driver)
-                if i == 0:
-                    row.append('ouptut')
-                    row.append('reason')
-                    report.append(row)
-                    continue;
-                # if i != 34:
-                #     continue;
-                # if i ==2:
-                #     break
-                # Sets the text of sign up form
-                # print(row[0:6])
-                main_page.forumElement = row[0:6]
-                # main_page.forumElement = ["abdo",'abdod',"0125245456","sdsaf@cbd.com","123456",""]
-                main_page.click_sign_up()
-                time.sleep(3)
-                # if signed up  this what we want ?
+            # IF ANYTHING CRASHES THE BROWSER WILL RESTART AND EVERTHING IS THE REPORT
+            try:
+                for i,row in enumerate(self.csv_reader):
+                    
+                    main_page = page.MainPage(self.driver)
+                    if i == 0:
+                        row.append('ouptut')
+                        row.append('reason')
+                        report.append(row)
+                        continue;
+                   
+                    main_page.forumElement = row[0:6]
+                    
 
-                result = main_page.is_signed_up()
-                self.login(row[3],row[4])
-                if result == 'SignedUp':
-                    if not self.login(row[3],row[4]):
-                        result = "failed to login"
-                        # print('login status ','nailed it' )
+                    main_page.click_sign_up()
+                    time.sleep(3)
+                    # if signed up  this what we want ?
 
-                if (result == "SignedUp" and row[-1]=="NotSignUp") or ((result !='SignedUp' and row[-1]=='SignUp')):
-                    row.append("Failed")
-                    row.append(result)
-                    report.append(row)
-                    self.driver.save_screenshot("failedScreenshots/"+str(i)+".png")
-                elif (result != "SignedUp" and row[-1]=="NotSignUp") or (result == "SignedUp" and row[-1]=="SignUp"):
-                    row.append('Passed')
-                    row.append(result)
-                    report.append(row)
+                    result = main_page.is_signed_up()
+                    if result == 'SignedUp':
+                        if not self.login(row[3],row[4]):
+                            result = "failed to login"
+                            # print('login status ','nailed it' )
+
+                    if (result == "SignedUp" and row[-1]=="NotSignUp") or ((result !='SignedUp' and row[-1]=='SignUp')):
+                        row.append("Failed")
+                        row.append(result)
+                        report.append(row)
+                        self.driver.save_screenshot("failedScreenshots/"+str(i)+".png")
+                    elif (result != "SignedUp" and row[-1]=="NotSignUp") or (result == "SignedUp" and row[-1]=="SignUp"):
+                        row.append('Passed')
+                        row.append(result)
+                        report.append(row)
+                    self.restart()
+            except:
+                self.restart()
 
                 # print(result,"  ",row[-2])
-                self.restart()
+            
         # print(report)
         with open('report.csv','w') as csv_file:
             self.writer = csv.writer(csv_file, delimiter=',')
             self.writer.writerows(report)
-        # not signed up then check the error message 
-        # if this is what we want then passed else take screen shot and assign as failed
-
-        # search_results_page = page.SearchResultsPage(self.driver)
-        #Verifies that the results page is not empty
-        # assert search_results_page.is_results_found(), "No results found."
-
+        
     def tearDown(self):
         self.driver.close()
 
